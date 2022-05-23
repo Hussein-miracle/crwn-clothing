@@ -6,19 +6,27 @@ import {getFirestore , collection, getDocs ,getDoc,doc ,setDoc ,writeBatch}from 
 // import {getDatabase }from  "firebase/database";
 
 
+// const firebaseAppConfig = {
+//     apiKey: "AIzaSyAWVV6dTJIkBIbIF0Rfla4vWjetM-wP59k",
+//     authDomain: "crwnclothingdb-22737.firebaseapp.com",
+//     projectId: "crwnclothingdb-22737",
+//     storageBucket: "crwnclothingdb-22737.appspot.com",
+//     messagingSenderId: "705505858307",
+//     appId: "1:705505858307:web:6b80f0d865e5040a9f4f36",
+//     measurementId: "G-5KVDNYT2JL"
+// };
+
+
+
 const firebaseAppConfig = {
-    apiKey: "AIzaSyAWVV6dTJIkBIbIF0Rfla4vWjetM-wP59k",
-    authDomain: "crwnclothingdb-22737.firebaseapp.com",
-    projectId: "crwnclothingdb-22737",
-    storageBucket: "crwnclothingdb-22737.appspot.com",
-    messagingSenderId: "705505858307",
-    appId: "1:705505858307:web:6b80f0d865e5040a9f4f36",
-    measurementId: "G-5KVDNYT2JL"
+    apiKey: "AIzaSyCNdWs-B3PjJzQXnlvxCsrdA7WEZfgBLz8",
+    authDomain: "clothing-b2e0d.firebaseapp.com",
+    projectId: "clothing-b2e0d",
+    storageBucket: "clothing-b2e0d.appspot.com",
+    messagingSenderId: "930935447612",
+    appId: "1:930935447612:web:698d5c0368999d2bcc6339"
 };
-
-
-
-
+  
 
 
 //initialize firebase app
@@ -77,7 +85,6 @@ const collectionRef = collection(firestoreDatabase , "users" );
 //get collection data 
 getDocs(collectionRef).then((snapShots) => {
 
-    // console.log(snapShots)
     let users = [];
 
     snapShots.docs.forEach(( doc ) => {
@@ -99,8 +106,7 @@ export const addCollectionsAndDocuments = async (collectionKey , objectsToAdd) =
         const batch = writeBatch(firestoreDatabase);
 // const collectionRef = collection(firestoreDatabase , collectionKey);
         const objTitles  = objectsToAdd.map( obj => obj.title );
-        console.log(objectsToAdd)
-        console.log(objTitles)
+
         
         for(let i  = 0 ; i < objectsToAdd.length ; i++){
             const newDocRef = doc(firestoreDatabase,collectionKey,objTitles[i]);
@@ -145,7 +151,6 @@ export const convertCollectionsSnapshotToMap = (collections) => {
         }
     });
 
-    console.log(transformedCollection,'transfromed collection');
     return transformedCollection.reduce((accumulator,collection) => {
         accumulator[collection.title.toLowerCase()] = collection;
         return accumulator;
@@ -163,17 +168,17 @@ export const createUserProfileDocument = async ( userAuth , additionalData) => {
 
     const userRef = doc( firestoreDatabase ,"users", `${userAuth.uid}`);
 
-    console.log("[userRef]" , userRef);
+    // console.log("[userRef]" , userRef);
 
 
     const snapShot = await getDoc( userRef );
-    console.log("[snapShot]",snapShot);
+    // console.log("[snapShot]",snapShot);
 
 
     //TO GET A COLLECTION
-    const collectionRef = collection( firestoreDatabase , `users`)  ;
+    // const collectionRef = collection( firestoreDatabase , `users`)  ;
 
-    console.log("[collectionRef]",collectionRef)
+    // console.log("[collectionRef]",collectionRef)
 
     
 
@@ -212,7 +217,7 @@ export const createUserProfileDocument = async ( userAuth , additionalData) => {
 
         await setDoc(userRef , snapShotData);
 
-        console.log("[setDoc DONE!]")
+        // console.log("[setDoc DONE!]")
         
             
     }

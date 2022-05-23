@@ -22,7 +22,7 @@ const SneakersPage = ( { collection  }) => {
 
     useEffect(()=>{
         setTimeout(()=>{
-            console.log(delay,'delay');
+            // console.log(delay,'delay');
             setLoading(false);
         },delay);
     },[])

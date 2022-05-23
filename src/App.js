@@ -63,11 +63,10 @@ class App  extends React.Component{
 
         const userRef = await createUserProfileDocument(userAuth);
 
-        // console.log(userRef);
+
 
         onSnapshot( userRef , (snapShot) => {
-          // console.log(snapShot);
-          // console.log(snapShot.data());
+
           setCurrentUser({
             id : snapShot.id,
             ...snapShot.data()
@@ -78,7 +77,7 @@ class App  extends React.Component{
       }
 
       setCurrentUser(userAuth)
-      // console.log(collectionsArray)
+
       // const dataArray = collectionsArray.map( ({title, items }) => ({title,items }) );
       // addCollectionsAndDocuments( "collection",dataArray);
 

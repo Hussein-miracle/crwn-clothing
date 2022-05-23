@@ -39,7 +39,7 @@ const CheckoutPage = ({cartItems , total}) => {
 
             <div className="total">
                     
-                    <span>TOTAL:#{total * 416}</span>
+                    <span>TOTAL: #{total * 250}</span>
                     { total  ? <button>
                         <a className="payment-link" href={`${'https://paystack.com/pay/4gtwishzng'}`} rel="noreferrer" target="_blank" >
                             <div className="payment-link__img">

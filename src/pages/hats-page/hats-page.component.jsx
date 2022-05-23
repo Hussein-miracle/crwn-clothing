@@ -13,9 +13,9 @@ import WithRouter from "../../HOC/withRouter/withRouter";
 
 const HatsPage = (props) => {
     // const collection  = useSelector((state) => selectCollection("hats")(state))
-    console.log(props.location,'props with params');
+    // console.log(props.location,'props with params');
         const {collection} = props;
-    console.log(collection,'collection props with params');
+    // console.log(collection,'collection props with params');
 
     const [loading,setLoading] = useState(true);
     const Max = 1200;
@@ -24,7 +24,7 @@ const HatsPage = (props) => {
     const delay = randomNum(Max,Min);
     useEffect(()=>{
         setTimeout(()=>{
-            console.log(delay,'delay');
+            // console.log(delay,'delay');
             setLoading(false);
         },delay);
     },[]);

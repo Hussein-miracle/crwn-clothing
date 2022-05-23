@@ -26,7 +26,7 @@ class ShopPage extends Component{
     componentDidMount(){
         const { fetchCollectionsStartAsync } = this.props;
         fetchCollectionsStartAsync();
-        console.log(this.props,'shop comp props');
+        // console.log(this.props,'shop comp props');
 
 
     }
@@ -38,7 +38,6 @@ class ShopPage extends Component{
                 
                 <Routes>
                     <Route exact path= "/" element ={<CollectionsOverviewWithSpinner isLoading={isCollectionFetching} />} />
-                    <Route   path ="/shop/:item"   element = {<CollectionPage/>} />
                 </Routes>
             </div>
         )

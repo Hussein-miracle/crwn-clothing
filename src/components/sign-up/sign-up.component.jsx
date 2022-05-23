@@ -30,8 +30,6 @@ class SignUp extends Component{
         e.preventDefault();
         const {name , value} = e.target;
 
-        console.log(name)
-        // console.log(value)
 
         this.setState({ [`${name}`]:value  })
     }
@@ -51,14 +49,14 @@ class SignUp extends Component{
 
             const { user } = await createUserWithEmailAndPassword( auth , email , password);
 
-            console.log( user )
+
 
             await createUserProfileDocument(user , { displayName });
 
         }catch(err){
             alert(err);
 
-            console.log(err)
+        
         }
 
         this.setState({

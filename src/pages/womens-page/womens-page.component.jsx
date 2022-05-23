@@ -21,7 +21,7 @@ const WomensPage = ( { collection  }) => {
 
     useEffect(()=>{
         setTimeout(()=>{
-            console.log(delay,'delay');
+            // console.log(delay,'delay');
             setLoading(false);
         },delay);
     },[])

@@ -36,8 +36,8 @@ class SignIn extends React.Component{
         }catch(err){
             alert(err)
             alert(err.message)
-            console.log(err)
-            console.log(err.message)
+            (err)
+            (err.message)
         }
 
 
@@ -45,9 +45,9 @@ class SignIn extends React.Component{
     }
 
     handleChange = (event) =>{
-        // console.log(event.target);
+        // (event.target);
         const {name , value} = event.target;
-        // console.log(name);
+        // (name);
         this.setState( { [name] : value } )
         
         
