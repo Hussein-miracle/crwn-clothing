@@ -15,7 +15,7 @@ import HomePage from "./pages/homepage/homepage.component.jsx";
 import Header from "./components/header/header.component.jsx";
 
 import ShopPage from "./pages/shop/shop.component.jsx";
-
+// import CollectionPage from "./pages/collection-page/collection-page";
 import SignIn from "./components/sign-in/sign-in.component";
 import SignUp from "./components/sign-up/sign-up.component";
 import CheckoutPage from "./pages/checkout/checkout.component";
@@ -96,13 +96,14 @@ class App  extends React.Component{
     
 
     return (
-      <div >
+      <div className="App">
         <Header/>
         
         <Routes>
 
           <Route   path ="/"   element = { this.state.loading ? <Spinner/> : <HomePage/>} />
-          <Route   path ="shop/*"   element = {<ShopPage/>} />
+          <Route   path ="/shop"   element = {<ShopPage/>} />
+          
           <Route path= "shop/hats" element = {<HatsPage/>} />
           <Route path= "shop/sneakers" element = {<SneakersPage/>} />
           <Route path= "shop/mens" element = {<MensPage/>} />

@@ -18,3 +18,91 @@
     }
   }
   
+
+  
+  
+  @media screen and (max-width:900px) {
+    .collection-page {
+      display: flex;
+      flex-direction: column;
+    
+      .title {
+        font-size: 38px;
+        margin: 0 auto 30px;
+      }
+    
+      .items {
+        display: grid;
+        grid-template-columns: repeat(auto-fit,minmax(25vw,1fr));
+        grid-gap: 5px;
+
+        justify-items: center;
+    
+        & .collection-item {
+          margin-bottom: 30px;
+          width: 25vw;
+        }
+      }
+    }
+  
+    
+    
+  }
+  @media screen and (max-width:750px) {
+    .collection-page {
+      display: flex;
+      flex-direction: column;
+    
+      .title {
+        font-size: 38px;
+        margin: 0 auto 30px;
+      }
+    
+      .items {
+        display: grid;
+        grid-template-columns: repeat(auto-fit,minmax(35vw,1fr));
+        grid-gap: 10px;
+
+        justify-items: center;
+    
+        & .collection-item {
+          margin-bottom: 30px;
+          width: 35vw;
+        }
+      }
+    }
+  
+    
+    
+  }
+  
+
+  @media screen and (max-width:450px) {
+    .collection-page {
+      display: flex;
+      flex-direction: column;
+    
+      .title {
+        font-size: 38px;
+        margin: 0 auto 30px;
+      }
+    
+      .items {
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        grid-gap: 5px;
+
+        justify-items: center;
+    
+        & .collection-item {
+          margin-bottom: 30px;
+          width: 40vw;
+          height: 40vw;
+          
+        }
+      }
+    }
+  
+    
+    
+  }

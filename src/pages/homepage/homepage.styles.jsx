@@ -5,6 +5,13 @@ export const HomePageContainer = styled.div`
     flex-direction: column;
     
     align-items: center;
-    padding: 20px 60px;
+    padding: 10px;
+
+    @media(max-width:320px){
+        padding:0;
+        display:grid;
+        grid-template-columns: repeat(auto-fit,1fr);
+        grid-template-rows: repeat(3,1fr);
+    }
 
 `

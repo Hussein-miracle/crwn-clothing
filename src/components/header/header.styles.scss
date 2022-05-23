@@ -13,21 +13,23 @@
     }
     
   
-    .options {
-      width: 50%;
+    
+  }
+
+.options {
+      // width: 50%;
       height: 100%;
       display: flex;
       align-items: center;
       justify-content: flex-end;
+      flex:.7;
   
-      .option {
-        padding: 10px 15px;
-        cursor: pointer;
-      }
+      
     }
-  }
-
-
+    .option {
+      padding: 10px 15px;
+      cursor: pointer;
+    }
 .logo{
   cursor: pointer;
   width: 100%;
@@ -42,4 +44,20 @@ button{
 button:focus{
   outline:none;
   
+}
+@media screen and (max-width:660px) {
+  .options{
+    
+  }
+  .option{
+    font-size: .8rem;
+  }
+}
+@media screen and (max-width:320px) {
+  .options{
+    flex:.7;
+  }
+  .option{
+    font-size: .8rem;
+  }
 }

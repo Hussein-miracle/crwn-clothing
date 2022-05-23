@@ -1,6 +1,6 @@
 .sign-in{
     height: 100%;
-    width: 35%;
+    // width: 40%;
     display:flex;
     flex-direction:column;
 
@@ -21,10 +21,28 @@
 
 .btns{
     width: 100%;
-    // display:flex;
-    // justify-content:space-between;
 
     display: grid;
     grid-template-columns: max-content max-content;
-    grid-column-gap: 50px;
+    grid-column-gap: 45px;
+}
+
+
+@media screen and (max-width:400px) {
+    .sign-in{
+        width: 100%;
+    }
+
+    form{
+        width: 100%;
+    }
+
+    .btns{
+        width: 100%;
+    
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        grid-column-gap: 45px;
+    }
+    
 }

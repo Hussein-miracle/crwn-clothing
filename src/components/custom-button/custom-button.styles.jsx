@@ -16,6 +16,10 @@ const invertedButtonStyles = css`
         color: white;
         
     }
+
+    @media(max-width:450px){
+        font-size:10px;
+    }
 `
 
 const googleSignInStyles =css`

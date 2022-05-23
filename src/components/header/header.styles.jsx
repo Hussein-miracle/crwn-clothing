@@ -12,18 +12,27 @@ justify-content: space-between;
 align-items:center;
 `;
 
+
 export const HeaderContainer = styled.div`
     height: 70px;
     width: 100%;
     display: flex;
     justify-content: space-between;
     margin-bottom: 25px;
+
+
+    
 `
 
 export const LogoContainer = styled(Link)`
     height: 100%;
-    width: 70px;
-    padding: 25px;
+    width: 100%;
+    padding: 20px;
+    flex:.4;
+    @media(max-width:320px){
+        flex:.3;
+        padding: 15px;
+    }
 `
 
 export const OptionsContainer = styled.div`

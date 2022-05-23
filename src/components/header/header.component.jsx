@@ -8,7 +8,7 @@ import {createStructuredSelector} from "reselect";
 import { ReactComponent as HeaderLogo } from "../../assets/crown.svg";
 
 import "./header.styles.scss";
-import {HeaderContainer,OptionBtn,OptionLink,OptionsContainer,OptionLinksContainer} from "./header.styles"
+import {HeaderContainer,OptionBtn,OptionLinksContainer} from "./header.styles"
 import { auth } from "../../firebase/firebase.utils";
 
 import CartIcon from "../cart-icon/cart-icon.component";
@@ -29,19 +29,19 @@ const Header = ({currentUser , hidden}) => {
 
             </Link>
 
-            <OptionsContainer>
-                <OptionLink  to="shop">
+            <div className="options" >
+                <Link className="option" to="shop">
                     SHOP
-                </OptionLink>
+                </Link>
 
                 {
                     
-                    currentUser ? <OptionBtn  onClick={() =>  auth.signOut() }> SIGN OUT</OptionBtn> :  <OptionLinksContainer> <OptionLink  to="/signin"> SIGN IN</OptionLink> <OptionLink  to="/signup"> SIGN UP</OptionLink></OptionLinksContainer>
+                    currentUser ? <OptionBtn  onClick={() =>  auth.signOut() }> SIGN OUT</OptionBtn> :  <OptionLinksContainer> <Link className="option"  to="/signin"> SIGN IN</Link> <Link className="option"  to="/signup"> SIGN UP</Link></OptionLinksContainer>
                 }
                 
                 <CartIcon/>
 
-            </OptionsContainer>
+            </div>
 
             {
                 hidden ? null : <CartDropdown/>
