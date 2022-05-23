@@ -1,0 +1,30 @@
+.sign-in{
+    height: 100%;
+    width: 35%;
+    display:flex;
+    flex-direction:column;
+
+
+    .title{
+        text-align: center;
+        margin:10px 0;
+    }
+}
+
+.center{
+    width :100%;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+}
+
+.btns{
+    width: 100%;
+    // display:flex;
+    // justify-content:space-between;
+
+    display: grid;
+    grid-template-columns: max-content max-content;
+    grid-column-gap: 50px;
+}

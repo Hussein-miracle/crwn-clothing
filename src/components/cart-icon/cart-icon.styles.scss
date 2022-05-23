@@ -1,0 +1,41 @@
+.cart-icon {
+    width: 45px;
+    height: 45px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  
+    .shopping-icon {
+      width: 24px;
+      height: 24px;
+    }
+  
+    .item-count {
+        color: #fff;
+        background-color: transparent;
+        // position: absolute;
+        font-size: 10px;
+        font-weight: bold;
+    //   bottom: 12px;
+        
+
+        &__container{
+            position: absolute;
+            top: 40%;
+            right: -6px;
+            transform: translate(-50%,-50%);
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background-color: goldenrod;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+  }
+  

@@ -1,0 +1,65 @@
+.sign-up{
+    height: 85%;
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+
+    & .title{
+        // height: 5%;
+        display: block;
+    }
+
+    &__input{
+        border: 1px solid black;
+    }
+
+    &-form{
+        width: 100%;
+        height: 80%;
+    }
+    &__btn{
+        background-color: gold;
+        width: 4rem;
+        height: 2rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: auto;
+        cursor: pointer;
+        border-radius: 8px;
+        transition: all .3s ease;
+        &:hover{
+            color: #fff;
+            background-color: black;
+            // transform: scale(1.25);
+        }
+        &:active{
+            background-color: goldenrod;
+            transform: scale(1.25);
+        }
+        
+    }
+
+    &__sing-in-access{
+        display: grid;
+        grid-template-columns: 1fr max-content;
+    }
+    &__sign-in--link{
+        color: gold;
+    }
+
+    &__sign-in--link:hover{
+        color: goldenrod;
+        text-decoration: underline;
+    }
+
+}
+
+.center{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
