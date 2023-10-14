@@ -13,6 +13,12 @@ align-items:center;
 `;
 
 
+export const HeaderLogo = styled.h3`
+
+
+`;
+
+
 export const HeaderContainer = styled.div`
     height: 70px;
     width: 100%;

@@ -19,13 +19,14 @@ import {getFirestore , collection, getDocs ,getDoc,doc ,setDoc ,writeBatch}from 
 
 
 const firebaseAppConfig = {
-    apiKey: "AIzaSyCNdWs-B3PjJzQXnlvxCsrdA7WEZfgBLz8",
-    authDomain: "clothing-b2e0d.firebaseapp.com",
-    projectId: "clothing-b2e0d",
-    storageBucket: "clothing-b2e0d.appspot.com",
-    messagingSenderId: "930935447612",
-    appId: "1:930935447612:web:698d5c0368999d2bcc6339"
-};
+    apiKey: "AIzaSyAWVV6dTJIkBIbIF0Rfla4vWjetM-wP59k",
+    authDomain: "crwnclothingdb-22737.firebaseapp.com",
+    projectId: "crwnclothingdb-22737",
+    storageBucket: "crwnclothingdb-22737.appspot.com",
+    messagingSenderId: "705505858307",
+    appId: "1:705505858307:web:6b80f0d865e5040a9f4f36",
+    measurementId: "G-5KVDNYT2JL"
+  };
   
 
 

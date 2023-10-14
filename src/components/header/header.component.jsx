@@ -3,60 +3,66 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 
-import {createStructuredSelector} from "reselect";
+import { createStructuredSelector } from "reselect";
 
-import { ReactComponent as HeaderLogo } from "../../assets/crown.svg";
+// import { ReactComponent as HeaderLogo } from "../../assets/crown.svg";
 
 import "./header.styles.scss";
-import {HeaderContainer,OptionBtn,OptionLinksContainer} from "./header.styles"
+import {
+  HeaderContainer,
+  OptionBtn,
+  OptionLinksContainer,
+  HeaderLogo,
+} from "./header.styles";
 import { auth } from "../../firebase/firebase.utils";
 
 import CartIcon from "../cart-icon/cart-icon.component";
 
 import CartDropdown from "../cart-dropdown/cart-dropdown.component";
 
-import {selectCartHidden } from "../../redux/cart/cart.selectors";
+import { selectCartHidden } from "../../redux/cart/cart.selectors";
 
-import {selectCurrentUser} from "../../redux/user/user.selectors";
+import { selectCurrentUser } from "../../redux/user/user.selectors";
 
-const Header = ({currentUser , hidden}) => {
-    
-    return (
-        <HeaderContainer>
-            <Link  to="/">
+const Header = ({ currentUser, hidden }) => {
+  return (
+    <HeaderContainer>
+      <Link to="/">
+        <HeaderLogo className="logo">HIPz-FiTz</HeaderLogo>
+      </Link>
 
-                <HeaderLogo className="logo" />
+      <div className="options">
+        <Link className="option" to="shop">
+          SHOP
+        </Link>
 
+        {currentUser ? (
+          <OptionBtn onClick={() => auth.signOut()}> SIGN OUT</OptionBtn>
+        ) : (
+          <OptionLinksContainer>
+            {" "}
+            <Link className="option" to="/signin">
+              {" "}
+              SIGN IN
+            </Link>{" "}
+            <Link className="option" to="/signup">
+              {" "}
+              SIGN UP
             </Link>
+          </OptionLinksContainer>
+        )}
 
-            <div className="options" >
-                <Link className="option" to="shop">
-                    SHOP
-                </Link>
+        <CartIcon />
+      </div>
 
-                {
-                    
-                    currentUser ? <OptionBtn  onClick={() =>  auth.signOut() }> SIGN OUT</OptionBtn> :  <OptionLinksContainer> <Link className="option"  to="/signin"> SIGN IN</Link> <Link className="option"  to="/signup"> SIGN UP</Link></OptionLinksContainer>
-                }
-                
-                <CartIcon/>
+      {hidden ? null : <CartDropdown />}
+    </HeaderContainer>
+  );
+};
 
-            </div>
+const mapStateToProps = createStructuredSelector({
+  currentUser: selectCurrentUser,
+  hidden: selectCartHidden,
+});
 
-            {
-                hidden ? null : <CartDropdown/>
-            }
-
-            
-        </HeaderContainer>
-    )
-}
-
-const mapStateToProps = createStructuredSelector (
-    {
-        currentUser: selectCurrentUser,
-        hidden: selectCartHidden
-    }
-)
-
-export default connect(mapStateToProps)(Header); 
+export default connect(mapStateToProps)(Header);

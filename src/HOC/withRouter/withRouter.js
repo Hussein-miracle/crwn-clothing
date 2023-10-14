@@ -1,20 +1,23 @@
-import React from 'react';
+import React from "react";
 
-import {
-    useLocation,
-    useNavigate,
-    useParams,
-  } from "react-router-dom";
-  
-const withRouter = function(WrappedComponent) {
+import { useLocation, useNavigate, useParams } from "react-router-dom";
 
-        return (props) => {
-            let location = useLocation();
-            let navigate = useNavigate();
-            let params = useParams();
-            
-            return (<WrappedComponent {...props} location={location} navigate ={navigate} params={params}/>  )    
-        };
-}
+const withRouter = function (WrappedComponent) {
+  return (props) => {
+    let location = useLocation();
+    let navigate = useNavigate();
+    let params = useParams();
 
-  export default withRouter;
+    return (
+      <WrappedComponent
+        {...props}
+        location={location}
+        navigate={navigate}
+        params={params}
+      />
+    );
+  };
+};
+
+
+export default withRouter;
